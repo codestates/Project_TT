@@ -200,7 +200,7 @@ public class ReviewBoardController {
             User user = userService.findUserById(dto.getUserId());
             ReviewBoard review = reviewBoardService.findReviewById(dto.getReviewId());
             int len;
-            if (recommendService.alreadyRecommend(user)) {
+            if (recommendService.alreadyRecommend(user, review)) {
                 recommendService.deleteRecommend(user, review);
                 len = recommendService.findByReview(review).size();
 
