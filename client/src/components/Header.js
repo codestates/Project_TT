@@ -1,83 +1,71 @@
-import React, { useState } from 'react';
-import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
-import DestinationReviews from './DestinationReviews';
-import Signup from './Signup';
-import ThemeTravel from './ThemeTravel';
-import Mypage from './Mypage';
-import Signin from './Signin';
-import Review from './Review';
-import '../styles/Header.css';
+import React from "react";
+import { Link, useHistory, withRouter } from "react-router-dom";
+import "../styles/Header.css";
 
-function Header() {
-  const [loginOn, setLoginOn] = useState(true); // 로그인 여부 (test : true로 바꾸고 개발)
-  const [modalOn, setModalOn] = useState(false);
+function Header(props) {
+  const history = useHistory();
 
   const loginModalOpen = () => {
-    setModalOn(true);
+    props.setModalOn(true);
+    console.log(props.modalOn);
+  };
+
+  const handleSignOut = () => {
+    // 로컬스토리지 accessToken 지우기
+    localStorage.setItem("accessToken", "");
+    history.push("/");
+    props.setLoginOn(false);
+    props.setUserInfo({});
   };
 
   return (
-    <BrowserRouter>
-      <Signin showPopup={modalOn} setShowPopup={setModalOn} />
-      <header id="header">
-        <Link id="logo-link" to="/">
-          <img src="/images/projecttt_logo.png" alt="Project_TT LOGO" />
-        </Link>
-        <nav id="nav">
-          <ul id="ul">
+    <header id="header">
+      <Link id="logo-link" to="/">
+        <img src="/images/projecttt_logo.png" alt="Project_TT LOGO" />
+      </Link>
+      <nav id="nav">
+        <ul id="ul">
+          <li>
+            <Link className="text-link" to="/themeTravel">
+              테마별 여행
+            </Link>
+          </li>
+          <li>
+            <Link className="text-link" to="/destinationReviews">
+              여행지 리뷰
+            </Link>
+          </li>
+          {props.loginOn ? (
             <li>
-              <Link className="text-link" to="/themeTravel">
-                테마별 여행
+              <Link className="text-link" to="/myPage">
+                마이 페이지
               </Link>
             </li>
+          ) : null}
+          {props.loginOn ? (
             <li>
-              <Link className="text-link" to="/destinationReviews">
-                여행지 리뷰
-              </Link>
+              <button className="text-link" onClick={handleSignOut}>
+                로그아웃
+              </button>
             </li>
-            {loginOn ? (
-              <li>
-                <Link className="text-link" to="/myPage">
-                  마이 페이지
-                </Link>
-              </li>
-            ) : null}
+          ) : (
             <li>
               <button className="text-link" onClick={loginModalOpen}>
                 로그인
               </button>
             </li>
+          )}
+          {props.loginOn ? null : (
             <li>
-               <Link className="text-link" to="/signUp">
+              <Link className="text-link" to="/signUp">
                 회원가입
               </Link>
             </li>
-          </ul>
-        </nav>
-      </header>
-
-      <Switch>
-        <Route exact path="/">
-          <ThemeTravel />
-        </Route>
-        <Route exact path="/destinationReviews">
-          <DestinationReviews />
-        </Route>
-        <Route exact path="/themeTravel">
-          <ThemeTravel />
-        </Route>
-        <Route exact path="/myPage">
-          <Mypage />
-        </Route>
-        <Route exact path="/signup">
-          <Signup />
-        </Route>
-        <Route exact path="/review">
-          <Review />
-        </Route>
-      </Switch>
-    </BrowserRouter>
+          )}
+        </ul>
+      </nav>
+    </header>
   );
 }
 
-export default Header;
+export default withRouter(Header);

@@ -1,7 +1,8 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 import '../styles/Signin.css';
+import { API_URL } from '../config/constants';
 
 axios.defaults.withCredentials = true;
 
@@ -9,6 +10,9 @@ function Signin(props) {
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
   const [userLoginError, setUserLoginError] = useState('');
+  const [userInfo, setUserInfo] = useState({});
+
+  const history = useHistory();
 
   const onLogin = async () => {
     const userData = {
@@ -23,7 +27,7 @@ function Signin(props) {
     console.log(userData);
 
     // 로그인 JWT 인증 처리 (API POST : /login)
-    await axios('http://ec2-3-35-140-107.ap-northeast-2.compute.amazonaws.com:8080/login', {
+    await axios(`${API_URL}/login`, {
       method: 'POST',
       data: userData,
       headers: {
@@ -36,9 +40,44 @@ function Signin(props) {
     })
       .then((res) => {
         const { accessToken } = res.data;
+
+        // 로컬스토리지 accessToken 담기
+        localStorage.setItem('accessToken', accessToken);
+
         // API 요청하는 콜마다 헤더에 accessToken 담아 보내도록 설정
         axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
-        console.log(res);
+        console.log(res.data);
+
+        // 윗 줄에 기본 헤더로 `Bearer ${accessToken}`를 넣었기 때문에
+        // 해당 accesstoken이 유효하면 GET 요청으로 로그인 회원 정보를 받아옴
+        axios(`${API_URL}/token-valid-check`, {
+          method: 'GET',
+          headers: {
+            'Access-Control-Allow-Headers': 'Content-Type',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET',
+            'Access-Control-Allow-Credentials': 'true',
+          },
+          withCredentials: true,
+        })
+          .then((res) => {
+            // id, pw가 맞고 토큰이 유효하면 받아온 데이터를 userInfo에 저장
+
+            props.setUserInfo(res.data);
+            setUserInfo(props.userInfo);
+            console.log(userInfo);
+
+            // useHistory를 사용하여 로그인 성공시 모달창을 끄고 mypage로 이동
+            props.setModalOn(false);
+            setUserEmail('');
+            setUserPassword('');
+            setUserLoginError('');
+            history.push('/mypage');
+            props.setLoginOn(true);
+          })
+          .catch((err) => {
+            console.error(err);
+          });
       })
       .catch((err) => {
         console.error(err);
@@ -49,7 +88,6 @@ function Signin(props) {
         } else {
           setUserLoginError('이메일 또는 비밀번호를 잘못 입력하셨습니다.');
         }
-
         if (err.response) {
           // 에러에 response가 있으면 해당 data를 출력
           console.log(err.response.data);
@@ -58,10 +96,10 @@ function Signin(props) {
   };
 
   const togglePopup = () => {
-    if (props.showPopup === false) {
-      props.setShowPopup(true);
+    if (props.modalOn === false) {
+      props.setModalOn(true);
     } else {
-      props.setShowPopup(false);
+      props.setModalOn(false);
       setUserEmail('');
       setUserPassword('');
       setUserLoginError('');
@@ -82,7 +120,7 @@ function Signin(props) {
 
   // 모달 창 끄고 회원가입으로 이동
   const moveSignup = () => {
-    props.setShowPopup(false);
+    props.setModalOn(false);
     setUserEmail('');
     setUserPassword('');
     setUserLoginError('');
@@ -90,7 +128,7 @@ function Signin(props) {
 
   return (
     <div>
-      {props.showPopup ? (
+      {props.modalOn ? (
         <div className="popup">
           <div className="popup_inner">
             <div id="signin-close-btn">

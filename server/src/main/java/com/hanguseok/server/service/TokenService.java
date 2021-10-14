@@ -4,25 +4,26 @@ import com.hanguseok.server.entity.User;
 import io.jsonwebtoken.*;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.time.Duration;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 @Service
+@Transactional
 public class TokenService {
 
     private final static String KEY = "hanguseokkey";
 
     public String createJwtToken(User user, Long time) {
-        Date expireDate = new Date(new Date().getTime() + time);
         Date now = new Date();
 
         return Jwts.builder()
                 .setHeaderParam(Header.TYPE, Header.JWT_TYPE)
                 .setIssuer("fresh")
                 .setIssuedAt(now)
-                .setExpiration(new Date(now.getTime() + Duration.ofSeconds(time).toMillis()))
+                .setExpiration(new Date(now.getTime() + Duration.ofHours(time).toMillis()))
                 .claim("email", user.getEmail())
                 .claim("password", user.getPassword())
                 .signWith(SignatureAlgorithm.HS256, KEY)
@@ -39,6 +40,7 @@ public class TokenService {
             return new HashMap<>() {
                 {
                     put("email", email);
+                    put("message", "토큰이 유효합니다.");
                 }
             };
         } catch (ExpiredJwtException e) {

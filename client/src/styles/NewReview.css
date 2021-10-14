@@ -1,0 +1,148 @@
+#new-review-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#text-title-content {
+  margin-top: 30px;
+}
+
+#new-review-author {
+  font-family: 'NanumSquare';
+  font-size: 15px;
+  margin-top: 15px;
+}
+
+#image-upload {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -20px;
+  margin-bottom: 15px;
+}
+
+#image-file-select {
+  font-family: 'NanumSquare';
+  background-color: #3d3d3d; /* Green */
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+#image-upload-btn {
+  background-color: #3d3d3d; /* Green */
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+#image-upload-btn:hover {
+  background-color: teal;
+}
+
+#text-title-content > input {
+  font-family: 'NanumSquare';
+  font-size: 24px;
+  width: 700px;
+  border: none;
+  resize: none;
+  border-bottom: 1px solid rgb(211, 211, 211);
+}
+
+#text-description-content {
+  margin-top: 20px;
+}
+
+#text-description-content > textarea {
+  font-family: 'NanumSquare';
+  font-size: 15px;
+  width: 700px;
+  height: 600px;
+  border: none;
+  resize: none;
+}
+
+#tag-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#hashtag-content > input {
+  font-family: 'NanumSquare';
+  margin-bottom: 10px;
+  width: 400px;
+}
+
+#hashtag-list {
+  font-family: 'NanumSquare';
+  font-size: 15px;
+  color: rgb(88, 88, 88);
+  font-weight: 800;
+}
+
+#dest-content > input {
+  width: 400px;
+  font-family: 'NanumSquare';
+}
+
+#post-btn {
+  background-color: #3d3d3d; /* Green */
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  margin-top: 50px;
+  cursor: pointer;
+}
+
+#post-btn:hover {
+  background-color: #df6400; /* Green */
+}
+
+#modify-btn {
+  background-color: #3d3d3d; /* Green */
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  margin-top: 50px;
+  cursor: pointer;
+}
+
+#modify-btn:hover {
+  background-color: #df6400; /* Green */
+}
+
+#upload-text {
+  font-family: 'NanumSquare';
+  font-size: 14px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}

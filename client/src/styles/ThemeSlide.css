@@ -1,0 +1,64 @@
+.theme-title {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.theme-title > span {
+  font-family: 'NanumSquare';
+  font-size: 27px;
+  font-weight: 700;
+}
+
+.theme-titles-span {
+  font-family: 'NanumSquare';
+  font-size: 12px;
+  font-weight: 700;
+  margin-left: 6px;
+  text-align: center;
+}
+
+.theme-travel-wrapper {
+  font-family: 'NanumSquare';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: 600;
+}
+
+.theme-travel-wrapper > span {
+  margin-left: 25px;
+}
+
+#theme-travel-content {
+  margin: 0 auto;
+  padding: 40px 40px 40px 40px;
+  width: 1000px;
+}
+
+.theme-slide-img {
+  position: relative;
+  margin-top: 10px;
+  margin-left: 25px;
+  margin-bottom: 10px;
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 3px rgba(173, 173, 173, 0.9);
+}
+
+.themeTravel-link {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.themeTravel-link:hover {
+  background-color: rgb(181, 245, 213);
+}

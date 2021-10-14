@@ -4,10 +4,7 @@ import reset from 'styled-reset';
 // 전역으로 css를 reset시키는 컴포넌트
 const globalStyles = createGlobalStyle`
     ${reset};
-
-
-    body {
-    }
+  
 
     @font-face {
       font-family: 'Noto Sans KR';

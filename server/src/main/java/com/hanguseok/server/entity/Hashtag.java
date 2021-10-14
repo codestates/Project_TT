@@ -21,7 +21,7 @@ public class Hashtag {
     @NotEmpty
     private String name;
 
-    @OneToMany(mappedBy = "hashtag")
+    @OneToMany(mappedBy = "hashtag", cascade = CascadeType.ALL)
     private List<BoardHash> reviews = new ArrayList<>();
 
 }

@@ -21,6 +21,10 @@ public class Comment {
     private String content;
 
     @ManyToOne(fetch = LAZY)
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "review_id")
     private ReviewBoard review;
 

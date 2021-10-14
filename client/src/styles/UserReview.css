@@ -3,13 +3,24 @@
   display: flex;
   padding-top: 10px;
   padding-bottom: 10px;
-  border-bottom: 1px solid rgb(219, 219, 219);
 }
 
 .user-review-content > img {
   width: 130px;
   margin-left: 10px;
   border-radius: 10px;
+  box-shadow: 1px 1px 10px 1px gray;
+}
+.user-review-main {
+  display: flex;
+  align-items: center;
+}
+
+.user-review-main > img {
+  width: 10px;
+  height: 10px;
+  margin-top: -6px;
+  margin-left: 5px;
 }
 
 .user-review-title {
@@ -18,9 +29,36 @@
   margin-bottom: 7px;
 }
 
+.user-review-hashtags {
+  font-size: 12px;
+  font-weight: bold;
+  color: rgb(104, 104, 104);
+  margin-bottom: 5px;
+}
+
+.user-review-likes-count {
+  font-size: 12px;
+  margin-left: 5px;
+  margin-top: -7px;
+}
+
+.user-review-author {
+  font-size: 13px;
+  margin-bottom: 7px;
+  color: rgb(59, 59, 59);
+  margin-top: 2px;
+}
+
+.user-review-region {
+  font-size: 12px;
+  margin-bottom: 7px;
+  color: rgb(59, 59, 59);
+}
+
 .user-review-description {
   font-size: 14px;
   margin-bottom: 7px;
+  line-height: 130%;
 }
 
 .user-review-count {
@@ -32,15 +70,6 @@
 .user-review-likes {
   display: flex;
   align-items: center;
-}
-
-.user-review-likes > img {
-  width: 20px;
-}
-
-.user-review-likes-count {
-  font-size: 12px;
-  margin-left: 5px;
 }
 
 .user-review-wrapper {
