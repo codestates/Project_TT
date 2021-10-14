@@ -18,14 +18,14 @@ public class RecommendService {
 
     private final RecommendRepository recommendRepository;
 
-    public boolean alreadyRecommend(User user) {
-        Optional<Recommend> recommend = recommendRepository.findByUser(user);
+    public boolean alreadyRecommend(User user, ReviewBoard review) {
+        Optional<Recommend> recommend = recommendRepository.findByUserAndReview(user, review);
         return recommend.isPresent();
     }
 
     public void deleteRecommend(User user, ReviewBoard review) {
         Recommend recommend = recommendRepository.findByUserAndReview(user, review).get();
-        recommendRepository.deleteById(recommend.getId());
+        recommendRepository.delete(recommend);
     }
 
     public List<Recommend> findByReview(ReviewBoard review) {
