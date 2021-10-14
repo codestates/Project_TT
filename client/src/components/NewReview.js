@@ -18,6 +18,7 @@ function NewReview(props) {
     region: "",
     hashtags: [],
   });
+  
   useEffect(() => {
     if (state !== undefined) {
       setS3UploadedLink(state.image);
@@ -39,7 +40,7 @@ function NewReview(props) {
   AWS.config.update({
     region: "ap-northeast-2",
     credentials: new AWS.CognitoIdentityCredentials({
-      IdentityPoolId: "ap-northeast-2:c73b0ffb-7106-4208-b363-d97260804331", // cognito 인증 풀에서 받아온 키를 문자열로 입력합니다. (Ex. "ap-northeast-2...")
+      IdentityPoolId: process.env.REACT_APP_POOLID, // cognito 인증 풀에서 받아온 키를 문자열로 입력합니다. (Ex. "ap-northeast-2...")
     }),
   });
 
