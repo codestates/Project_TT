@@ -14,19 +14,16 @@ function DestinationReviews(props) {
   }, []);
 
   async function getReview() {
-    await axios(
-      "http://ec2-3-35-140-107.ap-northeast-2.compute.amazonaws.com:8080/review/",
-      {
-        method: "GET",
-        headers: {
-          "Access-Control-Allow-Headers": "Content-Type",
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "GET",
-          "Access-Control-Allow-Credentials": "true",
-        },
-        withCredentials: true,
-      }
-    )
+    await axios('http://ec2-3-35-140-107.ap-northeast-2.compute.amazonaws.com:8080/review/', {
+      method: 'GET',
+      headers: {
+        'Access-Control-Allow-Headers': 'Content-Type',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET',
+        'Access-Control-Allow-Credentials': 'true',
+      },
+      withCredentials: true,
+    })
       .then((res) => {
         let reviewObj = res.data;
         let objectToArray = [];
@@ -34,8 +31,8 @@ function DestinationReviews(props) {
         for (let i = 0; i < keys.length; i++) {
           objectToArray.push({ ...reviewObj[keys[i]], id: keys[i] });
         }
-        objectToArray.sort(function(a, b){
-          return b.recommend - a.recommend
+        objectToArray.sort(function (a, b) {
+          return b.recommend - a.recommend;
         });
         setReviews(objectToArray);
       })
@@ -84,25 +81,16 @@ function DestinationReviews(props) {
               <div id="dest-review-wrapper">
                 <img className="image-box" src={ele.image} alt={ele.image} />
                 <div id="dest-wrapper">
-
                   <div id="recommend-wrapper">
                     <div id="recommend-text">
-                      <img
-                        id="recommend-icon"
-                        src="/images/heart_recommand.png"
-                      />
+                      <img id="recommend-icon" src="/images/heart_recommand.png" />
                       {ele.recommend}
                     </div>
                   </div>
                   <div id="dest-review-region">{ele.region}</div>
                   <div id="dest-review-title">{ele.title}</div>
-                  <div id="dest-review-description">
-                    {ele.content.slice(0, 30).replace(/.\s*$/, "").trim() +
-                      "..."}
-                  </div>
-                  <div className="hashtags">
-                    {ele.hashtags.map((el) => "#" + el + " ")}
-                  </div>
+                  <div id="dest-review-description">{ele.content.slice(0, 30).replace(/.\s*$/, '').trim() + '...'}</div>
+                  <div className="hashtags">{ele.hashtags.map((el) => '#' + el + ' ')}</div>
                 </div>
               </div>
             </Link>
