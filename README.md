@@ -43,6 +43,37 @@ Project TT는 여러분에게 국내 여행지를 리뷰하고 추천해주는 �
 
 <br>
 
+## UI Design
+
+### Randing Page
+![Client Side](https://user-images.githubusercontent.com/75058239/137068669-21b96bf8-e007-4923-bdf7-4fde2a59c5f1.png)
+
+### Sign up
+![Client Side](https://user-images.githubusercontent.com/75058239/137068669-21b96bf8-e007-4923-bdf7-4fde2a59c5f1.png)
+
+### Sign in
+![Client Side](https://user-images.githubusercontent.com/75058239/137068669-21b96bf8-e007-4923-bdf7-4fde2a59c5f1.png)
+
+### Destination Review
+![Client Side](https://user-images.githubusercontent.com/75058239/137068669-21b96bf8-e007-4923-bdf7-4fde2a59c5f1.png)
+
+### Post
+![Client Side](https://user-images.githubusercontent.com/75058239/137068669-21b96bf8-e007-4923-bdf7-4fde2a59c5f1.png)
+
+### Modify & Delete Post
+![Client Side](https://user-images.githubusercontent.com/75058239/137068669-21b96bf8-e007-4923-bdf7-4fde2a59c5f1.png)
+
+### Comment & Recommend
+![Client Side](https://user-images.githubusercontent.com/75058239/137068669-21b96bf8-e007-4923-bdf7-4fde2a59c5f1.png)
+
+### My page
+![Client Side](https://user-images.githubusercontent.com/75058239/137068669-21b96bf8-e007-4923-bdf7-4fde2a59c5f1.png)
+
+### Unregister
+![Client Side](https://user-images.githubusercontent.com/75058239/137068669-21b96bf8-e007-4923-bdf7-4fde2a59c5f1.png)
+
+<br>
+
 ## Team
 
 | 팀원 | 역할 |
