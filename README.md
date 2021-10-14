@@ -46,31 +46,31 @@ Project TT는 여러분에게 국내 여행지를 리뷰하고 추천해주는 �
 ## UI Design
 
 ### Randing Page
-![Client Side](https://user-images.githubusercontent.com/75058239/137068669-21b96bf8-e007-4923-bdf7-4fde2a59c5f1.png)
+![랜딩페이지](https://user-images.githubusercontent.com/69352020/137252172-fe4af61f-624e-496e-a97a-7f62ad286228.gif)
 
 ### Sign up
-![Client Side](https://user-images.githubusercontent.com/75058239/137068669-21b96bf8-e007-4923-bdf7-4fde2a59c5f1.png)
+![2 회원가입](https://user-images.githubusercontent.com/69352020/137252238-80727438-9f4a-491b-a28f-2a16bc2bbadc.gif)
 
 ### Sign in
-![Client Side](https://user-images.githubusercontent.com/75058239/137068669-21b96bf8-e007-4923-bdf7-4fde2a59c5f1.png)
+![3 로그인](https://user-images.githubusercontent.com/69352020/137252269-59d29037-d3f8-4612-920c-84b48aae633e.gif)
 
 ### Destination Review
-![Client Side](https://user-images.githubusercontent.com/75058239/137068669-21b96bf8-e007-4923-bdf7-4fde2a59c5f1.png)
+![4 여행지리뷰](https://user-images.githubusercontent.com/69352020/137252293-2412a3ad-a0dc-4ba7-81a0-5af2fbf57193.gif)
 
 ### Post
-![Client Side](https://user-images.githubusercontent.com/75058239/137068669-21b96bf8-e007-4923-bdf7-4fde2a59c5f1.png)
+![5 게시글](https://user-images.githubusercontent.com/69352020/137252312-fd795d3d-2da2-42a0-bd52-f331a1e4d643.gif)
 
 ### Modify & Delete Post
-![Client Side](https://user-images.githubusercontent.com/75058239/137068669-21b96bf8-e007-4923-bdf7-4fde2a59c5f1.png)
+![7 게시글수정및삭제](https://user-images.githubusercontent.com/69352020/137252350-b9bd4adc-f9ea-48e6-93d1-b56101d94c8c.gif)
 
 ### Comment & Recommend
-![Client Side](https://user-images.githubusercontent.com/75058239/137068669-21b96bf8-e007-4923-bdf7-4fde2a59c5f1.png)
+![6 댓글](https://user-images.githubusercontent.com/69352020/137252330-cc1264ae-e775-4234-b099-18bdc43cfdbb.gif)
 
 ### My page
-![Client Side](https://user-images.githubusercontent.com/75058239/137068669-21b96bf8-e007-4923-bdf7-4fde2a59c5f1.png)
+![8 마이페이지](https://user-images.githubusercontent.com/69352020/137252377-7d6a21b0-f925-4fc8-b241-5983e75ea276.gif)
 
 ### Unregister
-![Client Side](https://user-images.githubusercontent.com/75058239/137068669-21b96bf8-e007-4923-bdf7-4fde2a59c5f1.png)
+![9 회원탈퇴](https://user-images.githubusercontent.com/69352020/137252399-8857727d-eb89-4fe8-9adf-03bb1d58a327.gif)
 
 <br>
 
