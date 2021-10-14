@@ -15,7 +15,7 @@
   font-family: 'NanumSquare';
   font-size: 12px;
   font-weight: 700;
-  margin-left: 5px;
+  margin-left: 6px;
   text-align: center;
 }
 
@@ -34,14 +34,15 @@
 
 #theme-travel-content {
   margin: 0 auto;
-
-  padding: 0px 40px 40px 40px;
-  width: 500px;
+  padding: 40px 40px 40px 40px;
+  width: 1000px;
 }
 
 .theme-slide-img {
   position: relative;
-  margin: 10px;
+  margin-top: 10px;
+  margin-left: 25px;
+  margin-bottom: 10px;
   width: 200px;
   height: 150px;
   object-fit: cover;
@@ -54,8 +55,7 @@
   color: black;
   display: flex;
   flex-direction: column;
-  width: 88%;
-
+  width: 100%;
   border-radius: 10px;
 }
 
