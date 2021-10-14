@@ -45,7 +45,7 @@ Project TT는 여러분에게 국내 여행지를 리뷰하고 추천해주는 �
 
 ## UI Design
 
-### anding Page
+### Landing Page
 ![랜딩페이지](https://user-images.githubusercontent.com/69352020/137252172-fe4af61f-624e-496e-a97a-7f62ad286228.gif)
 
 ### Sign up
