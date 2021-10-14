@@ -9,12 +9,12 @@ import 'slick-carousel/slick/slick-theme.css';
 import '../styles/ThemeSlide.css';
 
 function ThemeSlide() {
-  const settings = {
+  const settings01 = {
     dots: true,
     infinite: true,
     speed: 800,
-    slidesToShow: 2,
-    slidesToScroll: 2,
+    slidesToShow: 4,
+    slidesToScroll: 4,
     autoplay: true,
     autoplaySpeed: 3000,
   };
@@ -169,23 +169,23 @@ function ThemeSlide() {
         <div className="theme-title">
           <span>{`#${topHashtags[0]}`}</span>
         </div>
-        <Slider {...settings}>{UserReviewList01}</Slider>
+        <Slider {...settings01}>{UserReviewList01}</Slider>
         <div className="theme-title">
           <span>{`#${topHashtags[1]}`}</span>
         </div>
-        <Slider {...settings}>{UserReviewList02}</Slider>
+        <Slider {...settings01}>{UserReviewList02}</Slider>
         <div className="theme-title">
           <span>{`#${topHashtags[2]}`}</span>
         </div>
-        <Slider {...settings}>{UserReviewList03}</Slider>
+        <Slider {...settings01}>{UserReviewList03}</Slider>
         <div className="theme-title">
           <span>{`#${topHashtags[3]}`}</span>
         </div>
-        <Slider {...settings}>{UserReviewList04}</Slider>
+        <Slider {...settings01}>{UserReviewList04}</Slider>
         <div className="theme-title">
           <span>{`#${topHashtags[4]}`}</span>
         </div>
-        <Slider {...settings}>{UserReviewList05}</Slider>
+        <Slider {...settings01}>{UserReviewList05}</Slider>
       </div>
     </>
   );
